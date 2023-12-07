@@ -1,103 +1,749 @@
+/* style.css */
+
+/* Informações básicas do tema */
 /*
-
-Theme name: teste olivas ;
-
+Theme name: teste olivas;
 Theme URI: teste;
-
-Author: Tiago Vieira de Oliveira  -- @tgvieirabr;
-
-Author URI:  https://www.linkedin.com/in/tgvieirabr/ ;
-
-Github Theme URI: https://github.com/tgvieirabr/wp ;
-
+Author: Tiago Vieira de Oliveira -- @tgvieirabr;
+Author URI: https://www.linkedin.com/in/tgvieirabr/;
+Github Theme URI: https://github.com/tgvieirabr/wp;
 Description: Teste fullstackwordpress;
-
-Version: 1. 0. 0.;
-
+Version: 1.0.0.;
 Text domain: PT-BR.
-
 */
 
-* {
-    box-sizing: border-box;
-  
-  }
-  
-  body {
-      background-color: #f9f9f9;
-      font-family: Helvetica;
-  }
-
-  .my-logo,
-footer {
-  width: 100%;
-  padding-left: 1%;
-  margin-bottom: 8px;
-  background-color: #78baff;
-  border: 1px solid #78baff;
-}
-body > header > h1 > a {
-color: #ffffff;
-font-weight: 400;
-}
-article > header {
-
-}
-footer {
-  margin-top: 4px;
+/* Estilos Globais */
+body {
+  background-color: #f9f9f9;
+  font-family: Helvetica, Arial, sans-serif;
+  color: #272727;
 }
 
 a {
   text-decoration: none;
 }
 
-/* 'Margin: 0 auto' centers block content on the page */
+header, footer {
+  background-color: #78baff;
+  color: #ffffff;
+  padding: 10px;
+}
+
+/* Layout Principal */
 .wrap {
   width: 99%;
   margin: 0 auto;
 }
 
-.content-area {
+.content-area, .primary-sidebar, .content-thin, .article-full {
   display: inline-block;
 }
 
 .content-thin {
-    width: 70%;
+  width: 70%;
 }
 
-.content-full-width {
-    width: 100%;
-}
-
-.content-area,
-.primary-sidebar {
-  display: inline-block;
+.content-full-width, .article-full {
+  width: 100%;
 }
 
 .primary-sidebar {
   width: 25%;
   padding: 1%;
-  vertical-align: top;
   background-color: #ececec;
 }
 
-.article-loop {
-    width: 45%;
-    text-align: left;
-    margin: 5px;
-    padding: 10px;
-}
-
-.article-full {
-  width: 99%;
-  padding: 1%;
-}
-
-.article-loop,
-.article-full {
-  display: inline-block;
-  vertical-align: top;
+/* Estilo dos Artigos */
+.article-loop, .article-full {
   background-color: #FFF;
   border-radius: 4px;
   margin-bottom: 4px;
+  padding: 1%;
+  display: inline-block;
+}
+
+/* Estilos para Formulários */
+input, textarea, button {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+/* Responsividade */
+@media screen and (max-width: 768px) {
+  .primary-sidebar, .content-thin, .article-loop {
+    width: 100%;
+  }
+}
+
+/* formulário */
+.wpcf7-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 350px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 20px;
+  position: relative;
+}
+
+.wpcf7-form .title {
+  font-size: 28px;
+  color: royalblue;
+  font-weight: 600;
+  letter-spacing: -1px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-left: 30px;
+}
+
+.wpcf7-form label {
+  position: relative;
+}
+
+.wpcf7-form input,
+.wpcf7-form textarea {
+  width: 100%;
+  padding: 10px 10px 20px 10px;
+  outline: 0;
+  border: 1px solid rgba(105, 105, 105, 0.397);
+  border-radius: 10px;
+}
+
+.wpcf7-form input[type=submit] {
+  border: none;
+  outline: none;
+  background-color: royalblue;
+  padding: 10px;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 16px;
+  transition: .3s ease;
+}
+
+.wpcf7-form input[type=submit]:hover {
+  background-color: rgb(56, 90, 194);
+}
+
+/* Cores */
+:root {
+  --gray-darker: #444444;
+  --gray-dark: #696969;
+  --gray: #999999;
+  --gray-light: #cccccc;
+  --gray-lighter: #ececec;
+  --gray-lightest: #f0f0f0;
+}
+
+*,
+*::before,
+*::after { 
+  box-sizing: border-box;
+}
+
+html {
+  background-color: var(--gray-lightest);
+}
+
+body {
+  color: var(--gray);
+  font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0;
+  padding: 1rem;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -moz-font-feature-settings: "liga" on;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+.btn {
+  background-color: white;
+  border: 1px solid var(--gray-light);
+  color: var(--gray-dark);
+  padding: 0.5rem;
+  text-transform: lowercase;
+}
+
+.btn--block {
+  display: block;
+  width: 100%;
+}
+
+.proj-cards {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.proj-cards_item {
+  display: flex;
+  padding: 1rem;
+  width: 100%;
+}
+
+@media(min-width: 40rem) {
+  .proj-cards_item {
+    width: 50%;
+  }
+}
+
+@media(min-width: 56rem) {
+  .proj-cards_item {
+    width: 33.3333%;
+  }
+}
+
+.proj-card {
+  background-color: white;
+  border-radius: 0.25rem;
+  box-shadow: 0 20px 40px -14px rgba(0,0,0,0.25);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.proj-card:hover .proj-card__image {
+  filter: contrast(100%);
+}
+
+.proj-card__content {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.proj-card__image {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+  filter: contrast(70%);
+  overflow: hidden;
+  position: relative;
+  transition: filter 0.5s cubic-bezier(.43,.41,.22,.91);
+}
+
+.proj-card__image--flowers {
+  background-image: url('caminho/para/sua/imagem.jpg');
+}
+
+.proj-card__title {
+  color: var(--gray-dark);
+  font-size: 1.25rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.proj-card__text {
+  flex: 1 1 auto;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+}
+
+/* Ajustes para diferentes tamanhos de tela */
+@media screen and (max-width: 700px) {
+  .proj-card__image {
+    background-size: contain;
+    background-position: top center;
+  }
+}
+
+/* Estilo do contêiner dos cartões */
+.proj-cards {
+  justify-content: space-between;
+}
+
+/* Estilo de cada item dos cartões */
+.proj-cards_item {
+  justify-content: center;
+}
+
+/* Estilo do cartão */
+.proj-card {
+  width: 100%;
+  align-items: center;
+}
+
+/* Conteúdo do cartão */
+.proj-card_content {
+  text-align: center;
+}
+
+/* Ajuste para mídias menores */
+@media screen and (max-width: 768px) {
+  .proj-cards_item {
+    flex: 0 0 100%;
+  }
+}
+
+/* Estilos adicionais para a página de projetos */
+
+.projects-container {
+  width: 100%;
+  max-width: 1200px; /* Ajuste conforme necessário */
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.filter-section {
+  text-align: center;
+}
+
+.filter-form {
+  display: flex; /* Alinha elementos horizontalmente */
+  justify-content: center; /* Centraliza o conteúdo do formulário */
+  align-items: center; /* Alinha verticalmente os itens do formulário */
+  gap: 10px; /* Espaço entre os elementos do formulário */
+  margin: 20px auto; /* Centraliza o formulário horizontalmente */
+  flex-wrap: wrap; /* Permite quebra de linha em resoluções menores */
+}
+
+.filter-select,
+.filter-submit-button {
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+}
+
+.filter-submit-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.filter-submit-button:hover {
+  background-color: #0056b3;
+}
+
+.proj-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Centraliza os cards na horizontal */
+  gap: 20px;
+}
+
+.proj-cards_item {
+  flex: 0 0 calc(33.333% - 20px); /* Ajuste para 3 cards por linha */
+  max-width: 33.333%;
+}
+
+.proj-card {
+  width: 100%; /* Ocupa toda a largura do container .proj-cards_item */
+  /* Demais estilos do card */
+}
+
+/* Estilos para telas menores */
+@media screen and (max-width: 768px) {
+  .proj-cards_item {
+    flex: 0 0 100%; /* Cada card ocupa uma linha inteira */
+    max-width: 100%;
+  }
+}
+/* Estilo do Cabeçalho (Header) */
+header {
+  background-color: #f0f0f0; /* Cinza claro */
+  padding: 10px 0;
+}
+
+/* Estilo da Navegação */
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center; /* Centraliza os itens horizontalmente */
+  flex-wrap: wrap; /* Permite quebra de linha em telas menores */
+}
+
+nav ul li {
+  margin: 0 10px; /* Espaço horizontal entre os itens */
+}
+
+nav a {
+  text-decoration: none;
+  color: #333; /* Cor do texto */
+  font-weight: bold;
+}
+
+/* Estilos para telas menores (responsividade) */
+@media screen and (max-width: 600px) {
+  nav ul {
+      flex-direction: column; /* Alinha os itens verticalmente */
+  }
+
+  nav ul li {
+      margin: 5px 0; /* Espaço vertical entre os itens */
+  }
+}
+/* Estilização do footer */
+footer {
+  background-color: #f0f0f0;
+  color: #333;
+  padding: 10px;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+   box-sizing: border-box;
+  margin: 0; /* Remova a margem */
+  left: 0; /* Defina o lado esquerdo como 0 */
+  right: 0; /* Defina o lado direito como 0 */
+}
+/* Estilos para o formulário da página de contato */
+.contact-form-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px; /* Ajuste a margem superior conforme necessário */
+}
+
+.wpcf7-form {
+  max-width: 400px; /* Ajuste a largura máxima do formulário conforme necessário */
+  /* Outros estilos do formulário aqui */
+}
+/* Estilos para o formulário da página de contato */
+.contact-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Adicionado para centralizar verticalmente */
+  margin-top: 20px; /* Ajuste a margem superior conforme necessário */
+}
+
+.wpcf7-form {
+  max-width: 400px; /* Ajuste a largura máxima do formulário conforme necessário */
+  padding: 20px; /* Adicionado para dar espaço interno ao formulário */
+  background-color: #fff; /* Adicione uma cor de fundo se desejar */
+  border-radius: 10px; /* Adicione bordas arredondadas se desejar */
+  /* Outros estilos do formulário aqui */
+}
+
+/* Estilos para projetos relacionados em formato de cards */
+.related-projects {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.related-projects h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.related-projects ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.related-projects li {
+  margin: 10px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 300px; /* Ajuste a largura conforme necessário */
+}
+
+.related-projects a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Estilos para telas menores */
+@media screen and (max-width: 768px) {
+  .related-projects ul {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .related-projects li {
+      width: 100%; /* Ocupa toda a largura em telas menores */
+  }
+}
+/* Estilos para o conteúdo do card do projeto */
+.project-content {
+  text-align: center; /* Centralize o conteúdo horizontalmente */
+}
+
+/* Estilos para a imagem do projeto dentro do card */
+.project-thumbnail img {
+  max-width: 400px; /* Define a largura máxima desejada */
+  max-height: 400px; /* Define a altura máxima desejada */
+  width: auto; /* Mantém a proporção original da imagem */
+  height: auto; /* Mantém a proporção original da imagem */
+  display: block; /* Remove margens indesejadas causadas por elementos inline */
+  margin: 0 auto; /* Centraliza a imagem horizontalmente */
+}
+/* Estilos para o botão "Voltar para a lista de projetos" */
+.button {
+    display: block; /* Torna o botão um elemento de bloco para centralizá-lo */
+    margin: 0 auto; /* Centraliza o botão horizontalmente */
+    text-align: center; /* Centraliza o texto dentro do botão */
+}
+
+
+/* Estilos básicos para a área de conteúdo principal */
+.content-area {
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Estilos para a seção de filtro */
+.cd-tab-filter-wrapper {
+  background-color: #f4f4f4;
+  padding: 15px;
+  text-align: center;
+}
+
+.cd-tab-filter {
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.cd-filters {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cd-filters li {
+  display: inline;
+  margin: 0 10px;
+}
+
+.cd-filters a {
+  display: inline-block;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #333;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.cd-filters a.selected,
+.cd-filters a:hover {
+  background-color: #5cb85c;
+  color: #fff;
+  border-color: #4cae4c;
+}
+
+/* Estilos para os cards de projetos */
+.cd-gallery {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.cd-gallery ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cd-gallery li {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  display: none; /* Oculto inicialmente */
+}
+
+.proj-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,.1);
+  overflow: hidden;
+  text-align: center;
+}
+
+
+   .filter-submit-button {
+       width: 150px; /* Ajuste a largura conforme necessário */
+       height: 40px; /* Ajuste a altura conforme necessário */
+       padding: 0 10px; /* Ajuste o preenchimento para centralizar o texto */
+       /* Outras propriedades estéticas podem ser adicionadas aqui, como cor de fundo, cor do texto, etc. */
+   }
+
+   .proj-card__image {
+       max-width: 300px;
+       max-height: 300px;
+       margin: 0 auto; /* Centraliza a imagem */
+       overflow: hidden; /* Garante que a imagem não ultrapasse o tamanho do container */
+   }
+
+   .proj-card__image img {
+       max-width: 100%;
+       height: auto;
+       display: block; /* Remove espaços extras abaixo da imagem */
+       margin: 0 auto; /* Centraliza a imagem se for mais estreita do que 300px */
+   }
+  
+   .proj-card__excerpt {
+       font-size: 0.9em; /* Ajuste o tamanho da fonte conforme necessário */
+       color: #666; /* Cor do texto */
+       margin: 10px 0; /* Espaçamento ao redor do resumo */
+   }
+   .proj-card__image {
+    width: 100%;
+    max-width: 300px;
+    height: 300px;
+    margin: 0 auto;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.proj-card__image img {
+    width: auto;
+    max-width: 100%;
+    max-height: 100%;
+}
+/* Estilos para os cards de projetos na página inicial */
+.proj-cards_item {
+  /* Seus estilos existentes para os cards */
+}
+
+.proj-card_image-container {
+  width: 100%;
+  height: 300px; /* Altura fixa para todas as imagens */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.proj-card_image-container img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover; /* Garante que a imagem cubra o espaço disponível */
+}
+
+.proj-card_content {
+  /* Seus estilos existentes para o conteúdo do card */
+}
+
+.proj-card_title, .proj-card_text, .proj-btn {
+  /* Seus estilos existentes para título, texto e botão */
+}
+.proj-btn {
+  padding-bottom: 100px; /* Ajuste o valor de acordo com sua preferência */
+  transition: all 0.3s ease; /* Suaviza a transição de estados */
+  margin-bottom: 20px;
+  /* Adicione aqui outros estilos existentes do botão */
+}
+
+/* Efeito de hover no botão */
+.proj-btn:hover {
+  background-color: #007bff; /* Altere para a cor desejada no hover */
+  color: #ffffff; /* Altere para a cor de texto desejada no hover */
+  transform: scale(1.05); /* Aumenta ligeiramente o tamanho do botão */
+}
+
+/* Animação no botão */
+@keyframes pulse {
+  0% {
+      transform: scale(1);
+  }
+  50% {
+      transform: scale(1.1);
+  }
+  100% {
+      transform: scale(1);
+  }
+}
+
+/* Aplicando a animação ao botão */
+.proj-btn:hover {
+  animation: pulse 1s infinite;
+}
+/* Estilo padrão para botões e links clicáveis */
+a, button, .btn, .proj-btn {
+  background-color: royalblue; /* Cor de fundo */
+  color: white; /* Cor do texto */
+  padding: 10px; /* Espaçamento interno */
+  border-radius: 10px; /* Bordas arredondadas */
+  text-transform: uppercase; /* Texto em maiúsculas */
+  text-decoration: none; /* Remove o sublinhado de links */
+  display: inline-block; /* Garante que o elemento seja tratado como um bloco, mantendo propriedades de linha */
+  border: none; /* Remove a borda padrão */
+  transition: background-color 0.3s, transform 0.3s; /* Suaviza as transições de hover */
+  cursor: pointer; /* Muda o cursor para indicar que é clicável */
+}
+
+/* Efeito de hover para botões e links clicáveis */
+a:hover, button:hover, .btn:hover, .proj-btn:hover {
+  background-color: rgb(56, 90, 194); /* Cor de fundo ao passar o mouse */
+  transform: scale(1.05); /* Aumenta ligeiramente o tamanho */
+  text-decoration: none; /* Mantém o texto sem sublinhado */
+}
+
+/* Animação ao passar o mouse */
+@keyframes hoverPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+a:hover, button:hover, .btn:hover, .proj-btn:hover {
+  animation: hoverPulse 1s infinite;
+}
+/* Estilos para reduzir a largura e centralizar os botões específicos */
+.btn-ver-projeto, .btn-voltar-lista {
+  width: 150px; /* Reduz a largura do botão */
+  margin: 0 auto; /* Centraliza o botão */
+  text-align: center; /* Centraliza o texto dentro do botão */
+  /* Mantenha os outros estilos do botão aqui */
+}
+
+/* Ajustando o estilo para telas menores (se necessário) */
+@media screen and (max-width: 768px) {
+  .btn-ver-projeto, .btn-voltar-lista {
+    width: 200px; /* Aumenta a largura do botão em telas menores */
+  }
+}
+
+/* Estilos para botões específicos na página de projetos */
+.proj-card-btn {
+  width: 150px; /* Reduz a largura do botão */
+  margin: 10px auto; /* Centraliza o botão e adiciona espaço acima e abaixo */
+  display: block; /* Faz o botão ocupar a linha inteira */
+  text-align: center; /* Centraliza o texto dentro do botão */
+
+  /* Mantenha os estilos existentes do botão aqui (cor, padding, etc.) */
+}
+
+/* Estilos para hover e animação (se necessário) */
+.proj-card-btn:hover {
+ 
+}
+
+/* Media query para ajustar em telas menores, se necessário */
+@media screen and (max-width: 768px) {
+  .proj-card-btn {
+    width: 70%; /* Ajusta a largura em telas menores */
+  }
 }

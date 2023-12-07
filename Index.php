@@ -1,25 +1,23 @@
-<h1>Olá mundo!</h1>
+<?php
+/*
+ * Template Name: Projetos
+ * Description: Página de projetos do site.
+ */
 
-ou
-teste 
-<h1>Custom Theme!</h1>
+get_header(); // Inclui o cabeçalho do tema
+?>
 
-<?php get_header(); ?>
-<main class="wrap">
-  <section class="content-area content-thin">
-<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-      <article class="article-loop">
-        <header>
-          <h2><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
-          By: <?php the_author(); ?>
-        </header>
-        <?php the_excerpt(); ?>
-      </article>
-<?php endwhile; else : ?>
-      <article>
-        <p>Sorry, no posts were found!</p>
-      </article>
-<?php endif; ?>
-  </section><?php get_sidebar(); ?>
-</main>
-<?php get_footer(); ?>
+<div id="primary" class="content-area">
+    <main id="main" class="site-main">
+
+        <div class="projects-container">
+
+        
+            </div>
+
+        </div>
+
+    </main>
+</div>
+
+<?php get_footer(); // Inclui o rodapé do tema ?>
