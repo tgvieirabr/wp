@@ -26,3 +26,8 @@ APP > PUBLIC > WP - CONTENT > THEMES.
 ## Informações adicionais
 
 Como não me foi passado um layout em figma ou xd e eu tive poucas horas nesse projeto me contive a fazer somente funcional, se observar a organização, eu configurei todo processo de scss, compilação automática com gulp, instalei o empacotador, para instalar e executar, dentro da pasta do tema, execute npm install && gulp watch, porém está usando o arquivo styles ainda. 
+Anexei no repositório também um backup do projeto em desenvolvimento em zip, utilizei o programa local by flywhell para executar wordpress localmente, pode instalar ele usando o link abaixo caso queira,
+
+https://localwp.com/
+
+
